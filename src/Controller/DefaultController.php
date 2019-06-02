@@ -7,9 +7,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
- * Class DefaultController
+ * Class DefaultController.
+ *
  * @IsGranted("ROLE_USER")
- * @package App\Controller
  */
 class DefaultController extends AbstractController
 {

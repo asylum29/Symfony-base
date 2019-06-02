@@ -3,14 +3,19 @@ easy_admin:
     design:
         form_theme:
             - '@EasyAdmin/form/bootstrap_4.html.twig'
+        menu:
+            - { label: 'Start', default: true, icon: 'tools', route: 'easyadmin_home' }
+            - { label: 'Users', entity: 'User', icon: 'users' }
+            - { label: 'Back to home', icon: 'home', route: 'home' }
     entities:
         User:
             class: App\Entity\User
+            role: ROLE_ADMIN
             form:
                 fields:
                     - username
                     - email
                     - enabled
                     - lastLogin
-                    - { property: 'plainPassword', type: 'text', type_options: { required: false } }
+                    - { property: 'plainPassword', type: 'password', type_options: { required: false } }
                     - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN' } } }
