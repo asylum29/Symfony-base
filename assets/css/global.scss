@@ -8,6 +8,8 @@ $custom-file-text: (
 
 @import "~bootstrap/scss/bootstrap";
 @import "~glyphicons-only-bootstrap/css/bootstrap.css";
+@import "~select2";
+@import "~select2-bootstrap4-theme";
 
 .custom-file-label {
     &::after {

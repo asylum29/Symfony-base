@@ -8,6 +8,9 @@
 * [VichUploaderBundle](https://symfony.com/doc/master/bundles/EasyAdminBundle/integration/vichuploaderbundle.html)
 * [WhiteOctoberPagerfantaBundle](https://github.com/whiteoctober/WhiteOctoberPagerfantaBundle)
 * [FriendsOfPHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
+* [select2entity-bundle](https://github.com/tetranz/select2entity-bundle)
+* [select2-bootstrap4-theme](https://ttskch.github.io/select2-bootstrap4-theme/)
+* [BsMultiSelect](https://dashboardcode.github.io/BsMultiSelect/)
 ## Установка:
 ```
 composer install

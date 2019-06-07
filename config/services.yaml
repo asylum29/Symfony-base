@@ -39,3 +39,5 @@ services:
             - { proximity: 1, prev_message: ‹, next_message: › }
         public: false
         tags: [{ name: pagerfanta.view, alias: my_view }]
+
+    Tetranz\Select2EntityBundle\Service\AutocompleteService: '@tetranz_select2entity.autocomplete_service'
