@@ -22,10 +22,7 @@ php bin/console doctrine:database:create
 php bin/console doctrine:migrations:migrate
 ```
 ```
-php bin/console fos:user:create
-```
-```
-php bin/console app:set-admin {username}
+php bin/console fos:user:create --super-admin
 ```
 ```
 yarn install
