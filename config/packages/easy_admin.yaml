@@ -18,6 +18,9 @@ easy_admin:
                     - enabled
                     - lastLogin
                     - roles
+                sort: [username, ASC]
+                actions:
+                    - { name: loginAs, label: 'Login as' }
             edit:
                 fields:
                     - username
@@ -25,12 +28,30 @@ easy_admin:
                     - enabled
                     - lastLogin
                     - { property: 'plainPassword', type: 'password', type_options: { required: false } }
-                    - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN': 'ROLE_SUPER_ADMIN' } } }
+                    - property: roles
+                      type: choice
+                      type_options:
+                          multiple: true
+                          expanded: true
+                          choices:
+                              'ROLE_USER': 'ROLE_USER'
+                              'ROLE_ADMIN': 'ROLE_ADMIN'
+                              'ROLE_SUPER_ADMIN': 'ROLE_SUPER_ADMIN'
+                form_options: { validation_groups: ['Profile'] }
             new:
                 fields:
                     - username
                     - email
-                    - enabled
+                    - { property: enabled, type_options: { data: true } }
                     - lastLogin
                     - { property: 'plainPassword', type: 'password', type_options: { required: true } }
-                    - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN': 'ROLE_SUPER_ADMIN' } } }
+                    - property: roles
+                      type: choice
+                      type_options:
+                          multiple: true
+                          expanded: true
+                          choices:
+                              'ROLE_USER': 'ROLE_USER'
+                              'ROLE_ADMIN': 'ROLE_ADMIN'
+                              'ROLE_SUPER_ADMIN': 'ROLE_SUPER_ADMIN'
+                form_options: { validation_groups: ['Registration'] }

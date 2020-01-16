@@ -12,7 +12,7 @@ $('.custom-file-input').on('change', function () {
 
 $('.bsmultiselect').bsMultiSelect();
 
-$.fn.select2.defaults.set("theme", "bootstrap4");
+$.fn.select2.defaults.set('theme', 'bootstrap4');
 $.fn.select2.amd.define('select2/i18n/ru', [], function () {
     return {
         errorLoading: function () {
@@ -56,4 +56,4 @@ $.fn.select2.amd.define('select2/i18n/ru', [], function () {
         }
     };
 });
-$.fn.select2.defaults.set("language", "ru");
+$.fn.select2.defaults.set('language', 'ru');

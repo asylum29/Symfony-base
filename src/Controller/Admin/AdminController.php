@@ -3,7 +3,9 @@
 namespace App\Controller\Admin;
 
 use AlterPHP\EasyAdminExtensionBundle\Controller\EasyAdminController;
+use App\Entity\User;
 use FOS\UserBundle\Model\UserManagerInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AdminController extends EasyAdminController
@@ -21,6 +23,22 @@ class AdminController extends EasyAdminController
     public function homeAction()
     {
         return $this->render('bundles/EasyAdminBundle/default/home.html.twig');
+    }
+
+    /**
+     * @return RedirectResponse
+     */
+    public function loginAsAction()
+    {
+        $id = $this->request->query->get('id');
+        $user = $this->em->getRepository(User::class)->find($id);
+
+        $params = [];
+        if (!empty($user)) {
+            $params['_switch_user'] = $user->getUsername();
+        }
+
+        return $this->redirectToRoute('home', $params);
     }
 
     public function createNewUserEntity()
