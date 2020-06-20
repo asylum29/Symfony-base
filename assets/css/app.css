@@ -1,5 +1,5 @@
-label.required::after,
-legend.required::after {
-    content: ' *';
+label.required::before,
+legend.required::before {
+    content: '* ';
     color: red;
 }
